@@ -5,6 +5,11 @@ export const modes = {
   infinite: { label: 'Бесконечно', speed: 78, score: [10, -5, -10] }
 };
 
+export const difficulties = {
+  easy: { label: 'Легко', speed: 0.72 },
+  hard: { label: 'Сложно', speed: 1.18 }
+};
+
 let nextId = 1;
 
 export function parseSentence(text) {
@@ -35,11 +40,11 @@ export function makeItem(text, y) {
 
 export function pickFiniteSentences() {
   const count = Math.max(1, Math.floor(sentences.length * 0.1));
-  return [...sentences].sort(() => 0.5 - Math.random()).slice(0, count);
+  return shuffle(sentences).slice(0, count);
 }
 
-export function randomSentence() {
-  return sentences[Math.floor(Math.random() * sentences.length)];
+export function makeSentenceBag() {
+  return shuffle(sentences);
 }
 
 export function scoreItem(item, mode) {
@@ -64,4 +69,8 @@ export function scoreItem(item, mode) {
 
   item.processed = true;
   return delta;
+}
+
+function shuffle(items) {
+  return [...items].sort(() => 0.5 - Math.random());
 }

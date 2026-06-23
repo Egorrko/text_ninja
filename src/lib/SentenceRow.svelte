@@ -21,7 +21,7 @@
         class:missed={word.missed}
         class:wrong={word.wrong}
         disabled={!playing || word.correct || word.missed}
-        on:click={() => onToggle(item.id, word.id)}
+        on:pointerup={() => onToggle(item.id, word.id)}
       >
         {word.text}
       </button>
