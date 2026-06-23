@@ -8,7 +8,7 @@
 <article
   class="sentence"
   class:processed={item.processed}
-  style={`transform: translateY(${item.y}px)`}
+  style={`top: ${Math.round(item.y)}px`}
   bind:clientHeight={height}
 >
   {#each item.words as word}

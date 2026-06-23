@@ -175,14 +175,12 @@ button {
 .sentence {
   position: absolute;
   left: 50%;
-  top: 0;
   width: min(820px, calc(100vw - 40px));
   padding: 20px 0;
   color: #333;
   font-size: clamp(20px, 2.3vw, 28px);
   line-height: 1.65;
   translate: -50% 0;
-  will-change: transform;
 }
 
 .sentence button {
